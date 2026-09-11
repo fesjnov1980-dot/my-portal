@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запланированные Проекты</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+            --accent-color: #38bdf8;
+        }
+        [data-theme="light"] {
+            --bg-color: #f1f5f9;
+            --text-color: #0f172a;
+            --card-bg: #ffffff;
+            --border-color: #cbd5e1;
+            --accent-color: #0284c7;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+        }
+        .header { width: 100%; max-width: 700px; margin-bottom: 25px; }
+        .back-btn, .theme-toggle {
+            background: var(--card-bg);
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+        .top-bar { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        h1 { color: var(--accent-color); }
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+        .project-title { font-size: 1.6rem; color: var(--accent-color); margin-bottom: 10px; }
+        .project-date { font-size: 0.9rem; color: #94a3b8; margin-bottom: 15px; }
+        .warning-note {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+        ul { margin-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 6px; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="top-bar">
+            <a href="index.html" class="back-btn">← Назад</a>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓 Тема</button>
+        </div>
+        <h1>Запланированные Проекты</h1>
+    </div>
+
+    <!-- ПРОЕКТ 1: AIvospatall -->
+    <div class="project-card">
+        <div class="project-title">AIvospatall</div>
+        <div class="project-date">Дата публикации: 31 сентября или 1 января 2027 года (если разработаю свою нейросеть)</div>
+        
+        <p><strong>Описание:</strong> Сайт-сборник нейросетей (Wan, Seedance, Collart AI, Gemini Omni Flash, Google Veo, PixVerse, Pika). Каждому пользователю выдается <strong>50 бонусов</strong>. Можно генерировать видео без регистрации!</p>
+
+        <div class="warning-note">
+            <strong>Примечание:</strong> Проекты не будут сохраняться, так как нет серверов. При каждом заходе на сайт созданные ранее видео не сохраняются.
+        </div>
+
+        <h3>Расход бонусов по нейросетям:</h3>
+        <ul>
+            <li><strong>Pika:</strong> 0 бонусов (до 20 видео по 5 сек, вертикально/горизонтально).</li>
+            <li><strong>Gemini Omni Flash 1.1:</strong>
+                <ul>
+                    <li>720p: 6 сек — 7 бонусов | 8 сек — 8 бонусов | 10 сек — 12 бонусов</li>
+                    <li>360p: 4 сек — 2 бонуса | 6 сек — 4 бонуса | 8 сек — 5 бонусов | 10 сек — 7 бонусов</li>
+                </ul>
+            </li>
+            <li><strong>Wan 2.1 (360p):</strong> от 1 до 10 сек (1 сек = 1 бонус, 2 сек = 4 бонуса... 5 сек = 7 бонусов, 10 сек = 20 бонусов).</li>
+            <li><strong>Wan 2.2 (720p):</strong> от 1 до 15 сек (в 3 раза больше бонусов, например 1 сек = 3 бонуса).</li>
+            <li><strong>Wan 2.3:</strong> 360p — в 2 раза больше бонусов чем секунд; 720p — в 4 раза больше чем 360p.</li>
+            <li><strong>Wan 2.5:</strong> 720p требует в 5 раз больше бонусов.</li>
+            <li><strong>Wan 2.7:</strong> 720p требует в 6 раз больше бонусов.</li>
+            <li><strong>Wan 3.0:</strong> от 1 до 30 сек. Если выбран хронометраж от 16 сек — берет в 7 раз больше бонусов, чем Wan 2.1.</li>
+            <li><strong>Seedance 1.0:</strong> 5 сек — 0 бонусов | 10 сек — 1 бонус (качество не определено).</li>
+            <li><strong>Seedance 1.5 Pro:</strong> 5 сек — 5 бонусов | 10 сек — 7 бонусов.</li>
+            <li><strong>Seedance 2.0 Fast:</strong> 5 сек — 6 бонусов | 10 сек — 8 бонусов.</li>
+            <li><strong>Seedance 2.0 Mini:</strong> 5 сек — 3 бонуса | 10 сек — 6 бонусов.</li>
+            <li><strong>Seedance 2.5:</strong> 2 сек — 5 бонусов | 5 сек — 10 бонусов | 10 сек — 15 бонусов.</li>
+            <li><strong>Collart AI:</strong> 5 сек — 1 бонус | 10 сек — 1 бонус.</li>
+            <li><strong>PixVerse V6:</strong> 2 сек (360p) — 1 бонус.</li>
+        </ul>
+    </div>
+
+    <!-- ПРОЕКТ 2: Vospprotection -->
+    <div class="project-card">
+        <div class="project-title">Vospprotection</div>
+        <div class="project-date">Дата публикации: Выйдет в этом году</div>
+        <p><strong>Описание:</strong> Боты для защиты сообществ и серверов.</p>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const newTheme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+        }
+    </script>
+</body>
+</html>
