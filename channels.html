@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Запланированные Проекты</title>
+    <title>Каналы и Группы</title>
     <style>
         :root {
             --bg-color: #0f172a;
@@ -29,7 +29,7 @@
             padding: 30px 20px;
             transition: all 0.3s ease;
         }
-        .header { width: 100%; max-width: 700px; margin-bottom: 25px; }
+        .header { width: 100%; max-width: 600px; margin-bottom: 25px; }
         .back-btn, .theme-toggle {
             background: var(--card-bg);
             color: var(--text-color);
@@ -40,27 +40,40 @@
             cursor: pointer;
         }
         .top-bar { display: flex; justify-content: space-between; margin-bottom: 15px; }
-        h1 { color: var(--accent-color); }
-        .project-card {
+        h1, h2 { color: var(--accent-color); margin-bottom: 15px; }
+        .section { width: 100%; max-width: 600px; margin-bottom: 30px; }
+        .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 20px;
+            padding: 15px;
             border-radius: 12px;
-            width: 100%;
-            max-width: 700px;
-            margin-bottom: 25px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        .project-title { font-size: 1.6rem; color: var(--accent-color); margin-bottom: 10px; }
-        .project-date { font-size: 0.9rem; color: #94a3b8; margin-bottom: 15px; }
-        .warning-note {
-            background: rgba(239, 68, 68, 0.1);
-            border-left: 4px solid #ef4444;
-            padding: 10px;
-            margin: 15px 0;
-            font-size: 0.9rem;
+        .icon { width: 40px; height: 40px; margin-right: 15px; }
+        .channel-info { flex-grow: 1; }
+        .channel-name { font-size: 1.3rem; font-weight: bold; }
+        .open-btn {
+            background: var(--accent-color);
+            color: #0f172a;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: bold;
         }
-        ul { margin-left: 20px; margin-top: 10px; }
-        li { margin-bottom: 6px; font-size: 0.95rem; }
+        .notice { font-size: 0.8rem; color: #94a3b8; margin-top: 5px; }
+        /* Круглые аватарки для сотрудников */
+        .avatar-employee {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-color);
+            margin-right: 15px;
+        }
+        .team-member { display: flex; align-items: center; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -70,50 +83,90 @@
             <a href="index.html" class="back-btn">← Назад</a>
             <button class="theme-toggle" onclick="toggleTheme()">🌓 Тема</button>
         </div>
-        <h1>Запланированные Проекты</h1>
+        <h1>Каналы и Группы</h1>
     </div>
 
-    <!-- ПРОЕКТ 1: AIvospatall -->
-    <div class="project-card">
-        <div class="project-title">AIvospatall</div>
-        <div class="project-date">Дата публикации: 31 сентября или 1 января 2027 года (если разработаю свою нейросеть)</div>
-        
-        <p><strong>Описание:</strong> Сайт-сборник нейросетей (Wan, Seedance, Collart AI, Gemini Omni Flash, Google Veo, PixVerse, Pika). Каждому пользователю выдается <strong>50 бонусов</strong>. Можно генерировать видео без регистрации!</p>
+    <!-- ПОДРАЗДЕЛ КАНАЛЫ -->
+    <div class="section">
+        <h2>Подраздел: Каналы</h2>
 
-        <div class="warning-note">
-            <strong>Примечание:</strong> Проекты не будут сохраняться, так как нет серверов. При каждом заходе на сайт созданные ранее видео не сохраняются.
+        <!-- YouTube -->
+        <div class="card">
+            <img src="icon-channel.png" alt="Значок канала" class="icon">
+            <div class="channel-info">
+                <div class="channel-name">ИМЯ КАНАЛА YOUTUBE</div>
+            </div>
+            <a href="ссылка на которую будет перекидывать кнопка" class="open-btn">Открыть канал</a>
         </div>
 
-        <h3>Расход бонусов по нейросетям:</h3>
-        <ul>
-            <li><strong>Pika:</strong> 0 бонусов (до 20 видео по 5 сек, вертикально/горизонтально).</li>
-            <li><strong>Gemini Omni Flash 1.1:</strong>
-                <ul>
-                    <li>720p: 6 сек — 7 бонусов | 8 сек — 8 бонусов | 10 сек — 12 бонусов</li>
-                    <li>360p: 4 сек — 2 бонуса | 6 сек — 4 бонуса | 8 сек — 5 бонусов | 10 сек — 7 бонусов</li>
-                </ul>
-            </li>
-            <li><strong>Wan 2.1 (360p):</strong> от 1 до 10 сек (1 сек = 1 бонус, 2 сек = 4 бонуса... 5 сек = 7 бонусов, 10 сек = 20 бонусов).</li>
-            <li><strong>Wan 2.2 (720p):</strong> от 1 до 15 сек (в 3 раза больше бонусов, например 1 сек = 3 бонуса).</li>
-            <li><strong>Wan 2.3:</strong> 360p — в 2 раза больше бонусов чем секунд; 720p — в 4 раза больше чем 360p.</li>
-            <li><strong>Wan 2.5:</strong> 720p требует в 5 раз больше бонусов.</li>
-            <li><strong>Wan 2.7:</strong> 720p требует в 6 раз больше бонусов.</li>
-            <li><strong>Wan 3.0:</strong> от 1 до 30 сек. Если выбран хронометраж от 16 сек — берет в 7 раз больше бонусов, чем Wan 2.1.</li>
-            <li><strong>Seedance 1.0:</strong> 5 сек — 0 бонусов | 10 сек — 1 бонус (качество не определено).</li>
-            <li><strong>Seedance 1.5 Pro:</strong> 5 сек — 5 бонусов | 10 сек — 7 бонусов.</li>
-            <li><strong>Seedance 2.0 Fast:</strong> 5 сек — 6 бонусов | 10 сек — 8 бонусов.</li>
-            <li><strong>Seedance 2.0 Mini:</strong> 5 сек — 3 бонуса | 10 сек — 6 бонусов.</li>
-            <li><strong>Seedance 2.5:</strong> 2 сек — 5 бонусов | 5 сек — 10 бонусов | 10 сек — 15 бонусов.</li>
-            <li><strong>Collart AI:</strong> 5 сек — 1 бонус | 10 сек — 1 бонус.</li>
-            <li><strong>PixVerse V6:</strong> 2 сек (360p) — 1 бонус.</li>
-        </ul>
+        <!-- TikTok -->
+        <div class="card">
+            <img src="icon-channel.png" alt="Значок канала" class="icon">
+            <div class="channel-info">
+                <div class="channel-name">ИМЯ КАНАЛА TIKTOK</div>
+            </div>
+            <a href="ссылка на которую будет перекидывать кнопка" class="open-btn">Открыть канал</a>
+        </div>
+
+        <!-- Suno -->
+        <div class="card">
+            <img src="icon-channel.png" alt="Значок канала" class="icon">
+            <div class="channel-info">
+                <div class="channel-name">ИМЯ КАНАЛА SUNO</div>
+            </div>
+            <a href="ссылка на которую будет перекидывать кнопка" class="open-btn">Открыть канал</a>
+        </div>
+
+        <!-- Telegram -->
+        <div class="card">
+            <img src="icon-channel.png" alt="Значок канала" class="icon">
+            <div class="channel-info">
+                <div class="channel-name">ИМЯ КАНАЛА TELEGRAM</div>
+            </div>
+            <a href="ссылка на которую будет перекидывать кнопка" class="open-btn">Открыть канал</a>
+        </div>
+
+        <p class="notice">Все группы и каналы публичны</p>
     </div>
 
-    <!-- ПРОЕКТ 2: Vospprotection -->
-    <div class="project-card">
-        <div class="project-title">Vospprotection</div>
-        <div class="project-date">Дата публикации: Выйдет в этом году</div>
-        <p><strong>Описание:</strong> Боты для защиты сообществ и серверов.</p>
+    <!-- ПОДРАЗДЕЛ ГРУППЫ -->
+    <div class="section">
+        <h2>Подраздел: Группы</h2>
+
+        <!-- Группа без имени -->
+        <div class="card">
+            <img src="icon-group.png" alt="Значок группы" class="icon">
+            <div class="channel-info">
+                <div class="channel-name">Вот сюда вставляй имя группы</div>
+            </div>
+            <a href="вот сюда вставляй ссылку на группу" class="open-btn">Перейти</a>
+        </div>
+
+        <!-- Группа с сотрудниками -->
+        <div class="card" style="flex-direction: column; align-items: flex-start;">
+            <div style="display: flex; align-items: center; width: 100%; justify-content: space-between;">
+                <div style="display: flex; align-items: center;">
+                    <img src="icon-group.png" alt="Значок группы" class="icon">
+                    <div class="channel-name">Группа с сотрудниками</div>
+                </div>
+                <a href="вот сюда вставляй ссылку на группу" class="open-btn">Перейти</a>
+            </div>
+
+            <!-- Сотрудники (Круглые аватарки) -->
+            <div style="margin-top: 15px; width: 100%;">
+                <p style="font-size: 0.9rem; margin-bottom: 5px;">Сотрудники группы:</p>
+                <div class="team-member">
+                    <img src="avatar-employee1.png" alt="Сотрудник 1" class="avatar-employee">
+                    <span>Юзернейм сотрудника 1</span>
+                </div>
+                <div class="team-member">
+                    <img src="avatar-employee2.png" alt="Сотрудник 2" class="avatar-employee">
+                    <span>Юзернейм сотрудника 2</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="notice">Все группы и каналы публичны</p>
     </div>
 
     <script>
